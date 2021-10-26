@@ -1,8 +1,8 @@
 <template>
   <div class="App">
-    <header>
+    <div class="text-center py-4">
       {{ message }}
-    </header>
+    </div>
   </div>
 </template>
 
@@ -10,14 +10,11 @@
 export default {
   data() {
     return {
-      message: "Welcome to the nfl",
+      message: "Welcome to the nfl!",
     };
   },
 };
 </script>
 
 <style>
-.App {
-  text-align: center;
-}
 </style>
