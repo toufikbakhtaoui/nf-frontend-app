@@ -2,7 +2,9 @@
     "scripts": {
         "start": "snowpack dev",
         "build": "snowpack build",
-        "test": "echo \"This template does not include a test runner by default.\" && exit 1"
+        "test": "echo \"This template does not include a test runner by default.\" && exit 1",
+        "lint": "eslint --ext .js,.vue --ignore-path .gitignore src",
+        "format": "prettier .  --write"
     },
     "dependencies": {
         "vue": "^3.0.11"
@@ -12,7 +14,11 @@
         "@snowpack/plugin-postcss": "^1.4.3",
         "@snowpack/plugin-vue": "^2.4.0",
         "autoprefixer": "^10.3.7",
+        "eslint": "^8.1.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-vue": "^7.20.0",
         "postcss": "^8.3.11",
+        "prettier": "^2.4.1",
         "snowpack": "^3.3.7",
         "tailwindcss": "^2.2.17"
     }
