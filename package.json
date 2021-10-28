@@ -4,7 +4,8 @@
         "build": "snowpack build",
         "test": "echo \"This template does not include a test runner by default.\" && exit 1",
         "lint": "eslint --ext .js,.vue --ignore-path .gitignore src",
-        "format": "prettier .  --write"
+        "format": "prettier . --write",
+        "prepare": "husky install"
     },
     "dependencies": {
         "vue": "^3.0.11"
@@ -17,9 +18,24 @@
         "eslint": "^8.1.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-vue": "^7.20.0",
+        "husky": "^7.0.4",
+        "lint-staged": "^11.2.6",
         "postcss": "^8.3.11",
         "prettier": "^2.4.1",
         "snowpack": "^3.3.7",
         "tailwindcss": "^2.2.17"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+      "*.(vue|js|html|css)": [
+        "prettier --write"
+      ],
+      "*.(vue|js)": [
+        "eslint --ext .js,.vue --ignore-path .gitignore src"
+      ]
     }
 }
