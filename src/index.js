@@ -1,8 +1,10 @@
 import { createApp } from 'vue'
-import App from './App.vue'
-import './main.css'
+import App from '@/App.vue'
+import router from '@/router/router.config'
+import '@/main.css'
 
 const app = createApp(App)
+app.use(router)
 app.mount('#app')
 
 // Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
