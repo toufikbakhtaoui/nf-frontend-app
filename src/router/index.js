@@ -6,19 +6,19 @@ import Teams from '@/views/teams'
 
 const routes = [
     {
-        path: '/',
+        path: '/home',
         name: 'Home',
         component: Home,
     },
 
     {
-        path: '/',
+        path: '/stats',
         name: 'Stats',
         component: Stats,
     },
 
     {
-        path: '/',
+        path: '/pantheon',
         name: 'Pantheon',
         component: Pantheon,
     },
