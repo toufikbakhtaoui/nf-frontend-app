@@ -1,7 +1,7 @@
 <template>
-    <div class="App h-screen w-scree">
-        <header class="bg-blue-50">
-            <nav class="container flex justify-evenly py-2">
+    <div class="App h-screen flex flex-col text-center">
+        <header>
+            <nav class="flex justify-evenly py-2 bg-blue-50">
                 <a v-for="item in items" :key="item">
                     <router-link :to="{ name: `${item}` }">{{
                         item
@@ -9,7 +9,7 @@
                 </a>
             </nav>
         </header>
-        <div class="border-2 text-center bg-gray-100 h-full">
+        <div class="flex-auto">
             <router-view></router-view>
         </div>
     </div>

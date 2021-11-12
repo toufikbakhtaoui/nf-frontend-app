@@ -1,12 +1,31 @@
 <template>
-    <div class="flex flex-row">
-        <div v-for="division in teams" :key="division.id" class="border">
-            <p class="text-xl">
-                {{ division[0] }}
-            </p>
-            <div v-for="team in division[1]" :key="team._id">
+    <div class="flex h-full">
+        <div class="w-48 flex flex-col justify-around my-4">
+            <span
+                v-for="team in teams"
+                :key="team._id"
+                class="
+                    flex
+                    transform
+                    capitalize
+                    cursor-pointer
+                    text-xs text-gray-700
+                    border-b border-r
+                    shadow-md
+                    ml-2
+                    hover:scale-110 hover:text-red-300
+                "
+                @click="selectTeam(team.name)"
+            >
+                <img
+                    :src="'/img/logo/' + team.name + '.svg'"
+                    class="w-4 h-4 mr-1"
+                />
                 {{ team.city }} {{ team.name }}
-            </div>
+            </span>
+        </div>
+        <div class="p-4 m-4 flex-auto border rounded shadow-lg">
+            {{ selectedTeam }}
         </div>
     </div>
 </template>
@@ -14,7 +33,6 @@
 <script>
 import { onMounted, computed } from 'vue'
 import useTeams from '@/stores/team-store'
-import { getTeamsByDivision } from '@/services/team/team-service'
 export default {
     name: 'Teams',
     setup() {
@@ -25,8 +43,18 @@ export default {
             }
         })
         return {
-            teams: computed(() => getTeamsByDivision(teams.value)),
+            teams: computed(() => teams.value),
         }
+    },
+    data() {
+        return {
+            selectedTeam: 'No team selected yet!',
+        }
+    },
+    methods: {
+        selectTeam(team) {
+            this.selectedTeam = team
+        },
     },
 }
 </script>
