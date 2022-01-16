@@ -17,15 +17,15 @@
                 "
                 @click="selectTeam(team.name)"
             >
-                <img
-                    :src="'/img/logo/' + team.name + '.svg'"
-                    class="w-4 h-4 mr-1"
-                />
+                <img :src="`/img/logo/${team.name}.svg`" class="w-4 h-4 mr-1" />
                 {{ team.city }} {{ team.name }}
             </span>
         </div>
         <div class="p-4 m-4 flex-auto border rounded shadow-lg">
-            {{ selectedTeam }}
+            <TeamBanner class="h-1/6" :team="selectedTeam"></TeamBanner>
+            <div class="mt-2 h-5/6">
+                {{ selectedTeam }}
+            </div>
         </div>
     </div>
 </template>
@@ -33,8 +33,12 @@
 <script>
 import { onMounted, computed } from 'vue'
 import useTeams from '@/stores/team-store'
+import TeamBanner from '@/components/team/team-banner'
 export default {
     name: 'Teams',
+    components: {
+        TeamBanner,
+    },
     setup() {
         const { loadTeams, teams } = useTeams()
         onMounted(async () => {
