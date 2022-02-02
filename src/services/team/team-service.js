@@ -5,16 +5,4 @@ const findAllTeams = async () => {
     return teams.data
 }
 
-const getTeamsByDivision = (teams) => {
-    const teamsByDivision = teams.reduce(
-        (entryMap, team) =>
-            entryMap.set(team.conference + '-' + team.division, [
-                ...(entryMap.get(team.conference + '-' + team.division) || []),
-                team,
-            ]),
-        new Map()
-    )
-    return teamsByDivision
-}
-
-export { findAllTeams, getTeamsByDivision }
+export { findAllTeams }

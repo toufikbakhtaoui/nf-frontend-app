@@ -11,6 +11,19 @@ const setTeams = (teams) => {
 
 const getters = {
     teams: computed(() => state.teams),
+    teamsByDivision: computed(() => {
+        let teamsByDivision = state.teams
+        teamsByDivision = teamsByDivision.reduce(
+            (entryMap, team) =>
+                entryMap.set(team.conference + '-' + team.division, [
+                    ...(entryMap.get(team.conference + '-' + team.division) ||
+                        []),
+                    team,
+                ]),
+            new Map()
+        )
+        return teamsByDivision
+    }),
 }
 
 const actions = {

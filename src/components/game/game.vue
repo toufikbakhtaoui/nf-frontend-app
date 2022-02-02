@@ -1,28 +1,30 @@
 <template>
-    <div class="flex w-96 flex-col h-fit m-4 shadow border bg-zinc-100">
+    <div class="bg-zinc-100 shadow">
         <!-- title -->
-        <div class="drop-shadow capitalize m-2">
+        <div class="m-2 mt-4 capitalize drop-shadow">
             <span>week {{ displayedWeek }}</span>
         </div>
 
         <!-- games -->
-        <div class="flex flex-wrap flex-row space-between my-2">
+        <div class="space-between my-2 flex flex-row flex-wrap">
             <div
                 v-for="game in games"
                 :key="game._id"
                 class="
-                    flex flex-col flex-auto
+                    m-2
+                    flex
                     w-36
+                    flex-auto
                     transform
+                    flex-col
+                    border
                     capitalize
                     text-gray-600
-                    m-2
-                    border
                     shadow
                 "
             >
                 <div class="flex flex-1 border-b">
-                    <span class="flex w-7 h-7 mx-1">
+                    <span class="mx-1 flex h-7 w-7">
                         <img :src="`/img/logo/${game.awayTeam.name}.svg`" />
                     </span>
 
@@ -38,7 +40,7 @@
                     </span>
                 </div>
                 <div class="flex flex-1">
-                    <span class="flex w-7 h-7 mx-1">
+                    <span class="mx-1 flex h-7 w-7">
                         <img :src="`/img/logo/${game.homeTeam.name}.svg`" />
                     </span>
                     <!-- <span class="text-xs text-gray-500">
@@ -55,22 +57,22 @@
         </div>
 
         <!-- buttons -->
-        <div class="flex bg-sky-800 drop-shadow rounded m-2">
+        <div class="m-2 mb-4 flex rounded bg-sky-800 drop-shadow">
             <button
-                class="flex justify-center flex-1"
+                class="flex flex-1 justify-center"
                 :disabled="displayedWeek === 1"
                 @click="showWeek(--displayedWeek)"
             >
                 <ChevronLeftIcon class="h-5 w-5 text-white" />
             </button>
             <button
-                class="flex justify-center flex-auto"
+                class="flex flex-auto justify-center"
                 @click="playWeek(displayedWeek)"
             >
                 <PlayIcon class="h-5 w-5 text-white" />
             </button>
             <button
-                class="flex justify-center flex-1"
+                class="flex flex-1 justify-center"
                 :disabled="
                     displayedWeek >= 16 && displayedWeek > currentSeason.week
                 "
@@ -148,6 +150,7 @@ export default {
                     currentSeason.value.week
                 )
                 await loadSeasons()
+                await loadTeams()
             }
         }
 

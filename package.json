@@ -25,6 +25,7 @@
         "lint-staged": "^11.2.6",
         "postcss": "^8.4.5",
         "prettier": "^2.4.1",
+        "prettier-plugin-tailwindcss": "^0.1.4",
         "snowpack": "^3.3.7",
         "tailwindcss": "^3.0.15"
     },
