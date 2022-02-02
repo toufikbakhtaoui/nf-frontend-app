@@ -1,6 +1,6 @@
 <template>
     <div
-        class="bg-center bg-contain bg-no-repeat"
+        class="bg-contain bg-center bg-no-repeat"
         :style="{ backgroundImage: `url(/img/banner/${team}.png)` }"
     ></div>
 </template>

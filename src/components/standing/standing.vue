@@ -3,13 +3,24 @@
         <div
             v-for="division in divisions"
             :key="division.id"
-            class="mx-2 mb-4 h-fit w-96 grow border bg-zinc-100 shadow"
+            class="
+                mx-2
+                mb-4
+                h-fit
+                w-96
+                grow
+                border
+                bg-zinc-100
+                capitalize
+                text-gray-600
+                shadow
+            "
         >
             <table>
                 <thead>
                     <tr>
                         <th class="bg-gray-200"></th>
-                        <th class="w-24 bg-gray-200 pb-3 pt-1">
+                        <th class="w-24 bg-gray-200 pb-3 pt-1 text-left">
                             {{ division[0] }}
                         </th>
                         <th class="w-24 bg-gray-200 pb-3 pt-1">win</th>

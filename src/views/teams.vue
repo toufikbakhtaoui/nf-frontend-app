@@ -1,27 +1,28 @@
 <template>
     <div class="flex h-full">
-        <div class="w-48 flex flex-col justify-around my-4">
+        <div class="my-4 flex w-48 flex-col justify-around">
             <span
                 v-for="team in teams"
                 :key="team._id"
                 class="
+                    ml-2
                     flex
                     transform
-                    capitalize
                     cursor-pointer
-                    text-xs text-gray-700
                     border-b border-r
+                    text-xs
+                    capitalize
+                    text-gray-700
                     shadow-md
-                    ml-2
                     hover:scale-110 hover:text-red-300
                 "
                 @click="selectTeam(team.name)"
             >
-                <img :src="`/img/logo/${team.name}.svg`" class="w-4 h-4 mr-1" />
+                <img :src="`/img/logo/${team.name}.svg`" class="mr-1 h-4 w-4" />
                 {{ team.city }} {{ team.name }}
             </span>
         </div>
-        <div class="p-4 m-4 flex-auto border rounded shadow-lg">
+        <div class="m-4 flex-auto rounded border p-4 shadow-lg">
             <TeamBanner class="h-1/6" :team="selectedTeam"></TeamBanner>
             <div class="mt-2 h-5/6">
                 {{ selectedTeam }}
