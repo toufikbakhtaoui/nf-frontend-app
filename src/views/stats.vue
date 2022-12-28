@@ -9,7 +9,7 @@
 
 <script>
 import { onMounted, computed } from 'vue'
-import useTeams from '@/stores/team-store'
+import useTeams from '../stores/team-store'
 export default {
     name: 'Stats',
     setup() {

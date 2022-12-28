@@ -91,9 +91,9 @@ import {
     ChevronRightIcon,
     PlayIcon,
 } from '@heroicons/vue/solid'
-import useGames from '@/stores/game-store'
-import useSeasons from '@/stores/season-store'
-import useTeams from '@/stores/team-store'
+import useGames from '../../stores/game-store'
+import useSeasons from '../../stores/season-store'
+import useTeams from '../../stores/team-store'
 export default {
     name: 'Game',
     components: { ChevronRightIcon, PlayIcon, ChevronLeftIcon },

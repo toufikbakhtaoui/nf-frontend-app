@@ -1,5 +1,5 @@
 import { reactive, readonly, computed } from 'vue'
-import { findAllTeams } from '@/services/team/team-service'
+import { findAllTeams } from '../services/team/team-service'
 
 const state = reactive({
     teams: [],

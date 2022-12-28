@@ -1,17 +1,8 @@
 import { createApp } from 'vue'
-import App from '@/App.vue'
-import router from '@/router'
-import '@/main.css'
+import App from '../src/App.vue'
+import router from '../src/router'
+import '../src/main.css'
 
 const app = createApp(App)
 app.use(router)
 app.mount('#app')
-
-// Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
-// Learn more: https://www.snowpack.dev/concepts/hot-module-replacement
-if (import.meta.hot) {
-    import.meta.hot.accept()
-    import.meta.hot.dispose(() => {
-        app.unmount()
-    })
-}

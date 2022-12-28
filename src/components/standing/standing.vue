@@ -71,8 +71,8 @@
 
 <script>
 import { onMounted, computed, ref } from 'vue'
-import useTeams from '@/stores/team-store'
-import useSeasons from '@/stores/season-store'
+import useTeams from '../../stores/team-store'
+import useSeasons from '../../stores/season-store'
 export default {
     name: 'Standing',
     setup() {

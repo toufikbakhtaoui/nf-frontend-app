@@ -1,4 +1,4 @@
-import axios from '@/middlewares/axios'
+import axios from '../../middlewares/axios'
 
 const findSeasons = async (season) => {
     let query =

@@ -1,5 +1,5 @@
 import { reactive, readonly, computed } from 'vue'
-import { findSeasons } from '@/services/season/season-service'
+import { findSeasons } from '../services/season/season-service'
 
 const state = reactive({
     seasons: [],

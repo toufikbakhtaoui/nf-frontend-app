@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '@/views/home'
-import Pantheon from '@/views/pantheon'
-import Stats from '@/views/stats'
-import Teams from '@/views/teams'
+import Home from '../views/home.vue'
+import Pantheon from '../views/pantheon.vue'
+import Stats from '../views/stats.vue'
+import Teams from '../views/teams.vue'
 
 const routes = [
     {

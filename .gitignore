@@ -1,7 +1,3 @@
-#Snowpack
-.snowpack
-build
-
 #VSCode
 .vscode
 #MacOS

@@ -1,5 +1,5 @@
 import { reactive, readonly, computed } from 'vue'
-import { findGames, playGames } from '@/services/game/game-service'
+import { findGames, playGames } from '../services/game/game-service'
 
 const state = reactive({
     games: [],

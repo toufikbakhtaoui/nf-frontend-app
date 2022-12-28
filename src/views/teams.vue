@@ -33,8 +33,8 @@
 
 <script>
 import { onMounted, computed } from 'vue'
-import useTeams from '@/stores/team-store'
-import TeamBanner from '@/components/team/team-banner'
+import useTeams from '../stores/team-store'
+import TeamBanner from '../components/team/team-banner.vue'
 export default {
     name: 'Teams',
     components: {

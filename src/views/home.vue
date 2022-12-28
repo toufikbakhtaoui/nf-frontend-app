@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Game from '@/components/game/game.vue'
-import Standing from '@/components/standing/standing.vue'
+import Game from '../components/game/game.vue'
+import Standing from '../components/standing/standing.vue'
 export default {
     name: 'Home',
     components: {
