@@ -10,18 +10,7 @@
             <div
                 v-for="game in games"
                 :key="game._id"
-                class="
-                    m-2
-                    flex
-                    w-36
-                    flex-auto
-                    transform
-                    flex-col
-                    border
-                    capitalize
-                    text-gray-600
-                    shadow
-                "
+                class="m-2 flex w-36 flex-auto transform flex-col border capitalize text-gray-600 shadow"
             >
                 <div class="flex flex-1 border-b">
                     <span class="mx-1 flex h-7 w-7">
@@ -29,7 +18,7 @@
                     </span>
 
                     <!-- <span>
-                        {{ getTeamRecord(game.awayTeam.identifier) }}
+                        {{ getTeamSeasonRecord(game.awayTeam.identifier) }}
                     </span> -->
                     <span class="flex-1 text-left">
                         {{ game.awayTeam.name }}
@@ -44,7 +33,7 @@
                         <img :src="`/img/logo/${game.homeTeam.name}.svg`" />
                     </span>
                     <!-- <span class="text-xs text-gray-500">
-                        {{ getTeamRecord(game.homeTeam.identifier) }}
+                        {{ getTeamSeasonRecord(game.homeTeam.identifier) }}
                     </span> -->
                     <span class="flex-1 text-left">
                         {{ game.homeTeam.name }}
@@ -121,7 +110,7 @@ export default {
             displayedWeek.value = currentSeason.value.week
         })
 
-        const getTeamRecord = (teamIdentifier) => {
+        const getTeamSeasonRecord = (teamIdentifier) => {
             const standings = teams.value.find(
                 (team) => team.identifier === teamIdentifier
             ).standings
@@ -158,7 +147,7 @@ export default {
             currentSeason: computed(() => currentSeason.value),
             games: computed(() => games.value),
             teams: computed(() => teams.value),
-            getTeamRecord: getTeamRecord,
+            getTeamSeasonRecord: getTeamSeasonRecord,
             showWeek: showWeek,
             playWeek: playWeek,
             displayedWeek: displayedWeek,
