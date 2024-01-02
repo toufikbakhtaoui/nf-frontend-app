@@ -1,13 +1,14 @@
 <template>
     <div>
         <BarChart
-            v-bind:chartData="mostWinsInRegularSeason()"
+            :chart-data="mostWinsInRegularSeason()"
             class="h-96 w-auto"
         ></BarChart>
         <BarChart
-            v-bind:chartData="mostLosesInRegularSeason()"
+            :chart-data="mostLosesInRegularSeason()"
             class="h-96 w-auto"
         ></BarChart>
+        <BarChart :chart-data="mostSuperBowls()" class="h-96 w-auto"></BarChart>
     </div>
 </template>
 
@@ -51,9 +52,28 @@ export default {
                 yAxisdata: yAxisData,
             }
         }
+        const mostSuperBowls = () => {
+            let orderedTeams = teams.value.sort(
+                (t1, t2) =>
+                    t2.trophiesRecord.superBowl.winner -
+                    t1.trophiesRecord.superBowl.winner
+            )
+            orderedTeams = orderedTeams.filter(
+                (team) => team.trophiesRecord.superBowl.winner > 0
+            )
+            const xAxisdata = orderedTeams.map((team) => team.name)
+            const yAxisData = orderedTeams.map(
+                (team) => team.trophiesRecord.superBowl.winner
+            )
+            return {
+                xAxisdata: xAxisdata,
+                yAxisdata: yAxisData,
+            }
+        }
         return {
             mostWinsInRegularSeason: mostWinsInRegularSeason,
             mostLosesInRegularSeason: mostLosesInRegularSeason,
+            mostSuperBowls: mostSuperBowls,
         }
     },
 }
