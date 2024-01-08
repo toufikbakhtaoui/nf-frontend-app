@@ -24,7 +24,7 @@ export default {
     setup() {
         const { loadTeams, teams } = useTeams()
         onMounted(async () => {
-            if (teams.value.length == 0) {
+            if (teams.value.length === 0) {
                 await loadTeams()
             }
         })
@@ -33,10 +33,10 @@ export default {
             const orderedTeams = teams.value.sort(
                 (t1, t2) => t2.stats.win - t1.stats.win
             )
-            const xAxisdata = orderedTeams.map((team) => team.name)
+            const xAxisData = orderedTeams.map((team) => team.name)
             const yAxisData = orderedTeams.map((team) => team.stats.win)
             return {
-                xAxisdata: xAxisdata,
+                xAxisdata: xAxisData,
                 yAxisdata: yAxisData,
             }
         }
@@ -45,10 +45,10 @@ export default {
             const orderedTeams = teams.value.sort(
                 (t1, t2) => t2.stats.lost - t1.stats.lost
             )
-            const xAxisdata = orderedTeams.map((team) => team.name)
+            const xAxisData = orderedTeams.map((team) => team.name)
             const yAxisData = orderedTeams.map((team) => team.stats.lost)
             return {
-                xAxisdata: xAxisdata,
+                xAxisdata: xAxisData,
                 yAxisdata: yAxisData,
             }
         }
@@ -61,12 +61,12 @@ export default {
             orderedTeams = orderedTeams.filter(
                 (team) => team.trophiesRecord.superBowl.winner > 0
             )
-            const xAxisdata = orderedTeams.map((team) => team.name)
+            const xAxisData = orderedTeams.map((team) => team.name)
             const yAxisData = orderedTeams.map(
                 (team) => team.trophiesRecord.superBowl.winner
             )
             return {
-                xAxisdata: xAxisdata,
+                xAxisdata: xAxisData,
                 yAxisdata: yAxisData,
             }
         }
